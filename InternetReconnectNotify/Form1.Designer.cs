@@ -48,15 +48,21 @@
             this.customURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(12, 141);
+            this.btnStart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnStart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStart.Location = new System.Drawing.Point(3, 3);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(112, 24);
+            this.btnStart.Size = new System.Drawing.Size(101, 24);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start check";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -64,10 +70,13 @@
             // 
             // btnStop
             // 
+            this.btnStop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnStop.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnStop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnStop.Enabled = false;
-            this.btnStop.Location = new System.Drawing.Point(12, 171);
+            this.btnStop.Location = new System.Drawing.Point(3, 33);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(112, 24);
+            this.btnStop.Size = new System.Drawing.Size(101, 30);
             this.btnStop.TabIndex = 1;
             this.btnStop.Text = "Stop check";
             this.btnStop.UseVisualStyleBackColor = true;
@@ -75,9 +84,12 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(148, 171);
+            this.btnExit.AutoSize = true;
+            this.btnExit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExit.Location = new System.Drawing.Point(110, 33);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(93, 24);
+            this.btnExit.Size = new System.Drawing.Size(101, 30);
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -85,6 +97,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox1.Controls.Add(this.lblCheckStatus);
             this.groupBox1.Controls.Add(this.lblTimer);
             this.groupBox1.Controls.Add(this.lblTryingForDesc);
@@ -92,15 +105,19 @@
             this.groupBox1.Controls.Add(this.lblTryDscr);
             this.groupBox1.Controls.Add(this.lblStatus);
             this.groupBox1.Controls.Add(this.lblYouAre);
-            this.groupBox1.Location = new System.Drawing.Point(12, 27);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(229, 108);
+            this.groupBox1.Size = new System.Drawing.Size(208, 118);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info";
             // 
             // lblCheckStatus
             // 
+            this.lblCheckStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCheckStatus.AutoSize = true;
             this.lblCheckStatus.Location = new System.Drawing.Point(9, 80);
             this.lblCheckStatus.Name = "lblCheckStatus";
@@ -110,6 +127,9 @@
             // 
             // lblTimer
             // 
+            this.lblTimer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTimer.AutoSize = true;
             this.lblTimer.Location = new System.Drawing.Point(60, 58);
             this.lblTimer.Name = "lblTimer";
@@ -118,6 +138,9 @@
             // 
             // lblTryingForDesc
             // 
+            this.lblTryingForDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTryingForDesc.AutoSize = true;
             this.lblTryingForDesc.Location = new System.Drawing.Point(9, 58);
             this.lblTryingForDesc.Name = "lblTryingForDesc";
@@ -127,6 +150,9 @@
             // 
             // lblTryCount
             // 
+            this.lblTryCount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTryCount.AutoSize = true;
             this.lblTryCount.Location = new System.Drawing.Point(49, 38);
             this.lblTryCount.Name = "lblTryCount";
@@ -136,6 +162,9 @@
             // 
             // lblTryDscr
             // 
+            this.lblTryDscr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTryDscr.AutoSize = true;
             this.lblTryDscr.Location = new System.Drawing.Point(9, 38);
             this.lblTryDscr.Name = "lblTryDscr";
@@ -145,6 +174,9 @@
             // 
             // lblStatus
             // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.Red;
@@ -156,6 +188,9 @@
             // 
             // lblYouAre
             // 
+            this.lblYouAre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblYouAre.AutoSize = true;
             this.lblYouAre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYouAre.Location = new System.Drawing.Point(9, 16);
@@ -172,9 +207,10 @@
             // chkAlwaysOnTop
             // 
             this.chkAlwaysOnTop.AutoSize = true;
-            this.chkAlwaysOnTop.Location = new System.Drawing.Point(148, 143);
+            this.chkAlwaysOnTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chkAlwaysOnTop.Location = new System.Drawing.Point(110, 3);
             this.chkAlwaysOnTop.Name = "chkAlwaysOnTop";
-            this.chkAlwaysOnTop.Size = new System.Drawing.Size(92, 17);
+            this.chkAlwaysOnTop.Size = new System.Drawing.Size(101, 24);
             this.chkAlwaysOnTop.TabIndex = 4;
             this.chkAlwaysOnTop.Text = "Always on top";
             this.chkAlwaysOnTop.UseVisualStyleBackColor = true;
@@ -187,7 +223,7 @@
             this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(253, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(214, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -230,16 +266,51 @@
             this.stopCheckToolStripMenuItem.Text = "Stop check";
             this.stopCheckToolStripMenuItem.Click += new System.EventHandler(this.stopCheckToolStripMenuItem_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.btnStart, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnStop, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnExit, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.chkAlwaysOnTop, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 155);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(214, 66);
+            this.tableLayoutPanel1.TabIndex = 6;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(214, 124);
+            this.tableLayoutPanel2.TabIndex = 7;
+            // 
             // Form1
             // 
+            this.AcceptButton = this.btnStart;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(253, 207);
-            this.Controls.Add(this.chkAlwaysOnTop);
-            this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnStop);
+            this.CancelButton = this.btnStop;
+            this.ClientSize = new System.Drawing.Size(214, 221);
+            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -249,6 +320,9 @@
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,6 +349,8 @@
         private System.Windows.Forms.ToolStripMenuItem customURLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startCheckToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopCheckToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }
 
