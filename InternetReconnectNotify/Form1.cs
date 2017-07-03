@@ -18,8 +18,21 @@ namespace InternetReconnectNotify
     public partial class Form1 : Form
     {
         Stopwatch stopwatch = new Stopwatch();
-        static string url = "http://google.com/";
+        private static string url = "http://google.com/";
         Boolean connected = false;
+
+        public static string Url
+        {
+            get
+            {
+                return url;
+            }
+
+            set
+            {
+                url = value;
+            }
+        }
 
         public Form1()
         {
@@ -33,18 +46,7 @@ namespace InternetReconnectNotify
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            try
-            {
-                stopwatch.Start();
-                lblCheckStatus.Text = "Check running";
-                btnStop.Enabled = true;
-                btnStart.Enabled = false;
-                checkForCon();
-            }
-            catch (Exception ex)
-            {
-                //lel
-            }
+            start();
         }
 
         public void checkForCon()
@@ -85,11 +87,64 @@ namespace InternetReconnectNotify
 
         private void btnStop_Click(object sender, EventArgs e)
         {
+            stop();
+        }
+
+        private void chkAlwaysOnTop_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAlwaysOnTop.Checked)
+            {
+                this.TopMost = true;
+            }
+            else
+            {
+                this.TopMost = false;
+            }
+        }
+
+        private void startCheckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            start();
+        }
+
+        private void stopCheckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            stop();
+        }
+
+        private void start()
+        {
+            try
+            {
+                stopwatch.Start();
+                lblCheckStatus.Text = "Check running";
+                btnStop.Enabled = true;
+                btnStart.Enabled = false;
+                startCheckToolStripMenuItem.Enabled = false;
+                stopCheckToolStripMenuItem.Enabled = true;
+                checkForCon();
+            }
+            catch (Exception ex)
+            {
+                //lel
+            }
+        }
+
+        private void stop()
+        {
             backgroundWorker1.CancelAsync();
             stopwatch.Stop();
             btnStop.Enabled = false;
             btnStart.Enabled = true;
+            startCheckToolStripMenuItem.Enabled = true;
+            stopCheckToolStripMenuItem.Enabled = false;
             lblCheckStatus.Text = "Check stopped";
+        }
+
+        private void customURLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormURL f_url = new FormURL();
+            f_url.Show();
         }
     }
 }
