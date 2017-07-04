@@ -41,6 +41,18 @@ namespace InternetReconnectNotify
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            stop();
+            btnStart.Enabled = false;
+            chkAlwaysOnTop.Enabled = false;
+            lblYouAre.Text = "Bye!";
+            lblStatus.Visible = false;
+            lblTryDscr.Visible = false;
+            lblTryCount.Visible = false;
+            lblTryingForDesc.Visible = false;
+            lblTimer.Visible = false;
+            lblCheckStatus.Visible = false;
+            this.Update();
+            Thread.Sleep(333);
             this.Close();
         }
 
