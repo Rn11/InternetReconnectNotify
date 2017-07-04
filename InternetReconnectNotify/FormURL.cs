@@ -20,14 +20,12 @@ namespace InternetReconnectNotify
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            this.Dispose();
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             Form1.Url = txtURL.Text;
             this.Close();
-            this.Dispose();
         }
     }
 }

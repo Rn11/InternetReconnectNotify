@@ -12,6 +12,7 @@ using System.Threading;
 using System.Net;
 using System.Net.Http;
 using System.Media;
+using System.Reflection;
 
 namespace InternetReconnectNotify
 {
@@ -37,6 +38,7 @@ namespace InternetReconnectNotify
         public Form1()
         {
             InitializeComponent();
+            lblVerVal.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -68,6 +70,7 @@ namespace InternetReconnectNotify
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
+            NetworkUtil nu = new NetworkUtil();
             do
             {
                 try
@@ -75,24 +78,23 @@ namespace InternetReconnectNotify
                     lblTimer.Text = stopwatch.Elapsed.Minutes.ToString() + " Minutes";
                     lblTryCount.Text = Convert.ToString(Convert.ToInt32(lblTryCount.Text) + 1);
 
-                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-
-                    using (WebResponse response = (HttpWebResponse)request.GetResponse())
+                    if (nu.checkNetwork(url))
                     {
+
                         lblStatus.Text = "connected!";
                         lblStatus.ForeColor = Color.Green;
-
                         connected = true;
+                        lblCheckStatus.Text = "Check stopped";
                         SystemSounds.Question.Play();
                         MessageBox.Show("Conratulations, you are connected to the internet!");
-                        lblCheckStatus.Text = "Check stopped";
                     }
+
                 }
                 catch (Exception ex)
                 {
                     connected = false;
                 }
-
+                // Timeout 8.5 sec
                 Thread.Sleep(8500);
             } while (!connected && !backgroundWorker1.CancellationPending);
         }

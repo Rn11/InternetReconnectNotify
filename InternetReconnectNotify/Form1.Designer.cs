@@ -33,6 +33,8 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblVerVal = new System.Windows.Forms.Label();
+            this.lblVerDesc = new System.Windows.Forms.Label();
             this.lblCheckStatus = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
             this.lblTryingForDesc = new System.Windows.Forms.Label();
@@ -44,10 +46,10 @@
             this.chkAlwaysOnTop = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.actionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1.SuspendLayout();
@@ -98,6 +100,8 @@
             // groupBox1
             // 
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox1.Controls.Add(this.lblVerVal);
+            this.groupBox1.Controls.Add(this.lblVerDesc);
             this.groupBox1.Controls.Add(this.lblCheckStatus);
             this.groupBox1.Controls.Add(this.lblTimer);
             this.groupBox1.Controls.Add(this.lblTryingForDesc);
@@ -112,6 +116,26 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info";
+            // 
+            // lblVerVal
+            // 
+            this.lblVerVal.AutoSize = true;
+            this.lblVerVal.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblVerVal.Location = new System.Drawing.Point(49, 99);
+            this.lblVerVal.Name = "lblVerVal";
+            this.lblVerVal.Size = new System.Drawing.Size(23, 13);
+            this.lblVerVal.TabIndex = 8;
+            this.lblVerVal.Text = "null";
+            // 
+            // lblVerDesc
+            // 
+            this.lblVerDesc.AutoSize = true;
+            this.lblVerDesc.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblVerDesc.Location = new System.Drawing.Point(9, 99);
+            this.lblVerDesc.Name = "lblVerDesc";
+            this.lblVerDesc.Size = new System.Drawing.Size(45, 13);
+            this.lblVerDesc.TabIndex = 7;
+            this.lblVerDesc.Text = "Version:";
             // 
             // lblCheckStatus
             // 
@@ -236,6 +260,21 @@
             this.actionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.actionsToolStripMenuItem.Text = "Actions";
             // 
+            // startCheckToolStripMenuItem
+            // 
+            this.startCheckToolStripMenuItem.Name = "startCheckToolStripMenuItem";
+            this.startCheckToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.startCheckToolStripMenuItem.Text = "Start check";
+            this.startCheckToolStripMenuItem.Click += new System.EventHandler(this.startCheckToolStripMenuItem_Click);
+            // 
+            // stopCheckToolStripMenuItem
+            // 
+            this.stopCheckToolStripMenuItem.Enabled = false;
+            this.stopCheckToolStripMenuItem.Name = "stopCheckToolStripMenuItem";
+            this.stopCheckToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.stopCheckToolStripMenuItem.Text = "Stop check";
+            this.stopCheckToolStripMenuItem.Click += new System.EventHandler(this.stopCheckToolStripMenuItem_Click);
+            // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -247,24 +286,9 @@
             // customURLToolStripMenuItem
             // 
             this.customURLToolStripMenuItem.Name = "customURLToolStripMenuItem";
-            this.customURLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.customURLToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.customURLToolStripMenuItem.Text = "Custom URL";
             this.customURLToolStripMenuItem.Click += new System.EventHandler(this.customURLToolStripMenuItem_Click);
-            // 
-            // startCheckToolStripMenuItem
-            // 
-            this.startCheckToolStripMenuItem.Name = "startCheckToolStripMenuItem";
-            this.startCheckToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.startCheckToolStripMenuItem.Text = "Start check";
-            this.startCheckToolStripMenuItem.Click += new System.EventHandler(this.startCheckToolStripMenuItem_Click);
-            // 
-            // stopCheckToolStripMenuItem
-            // 
-            this.stopCheckToolStripMenuItem.Enabled = false;
-            this.stopCheckToolStripMenuItem.Name = "stopCheckToolStripMenuItem";
-            this.stopCheckToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.stopCheckToolStripMenuItem.Text = "Stop check";
-            this.stopCheckToolStripMenuItem.Click += new System.EventHandler(this.stopCheckToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -351,6 +375,8 @@
         private System.Windows.Forms.ToolStripMenuItem stopCheckToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label lblVerVal;
+        private System.Windows.Forms.Label lblVerDesc;
     }
 }
 
